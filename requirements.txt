@@ -1,0 +1,8 @@
+gym
+stable-baselines3
+torch
+pandas
+scikit-learn
+streamlit
+gtts
+numpy

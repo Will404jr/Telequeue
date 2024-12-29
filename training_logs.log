@@ -1,0 +1,3 @@
+2024-11-17 15:50:09,100 - INFO - Action: 2, Patient: Critical, Waiting Time: 16.00, Reward: 83.99832848333334, Queue Length: 9
+2024-11-17 15:50:09,100 - INFO - Action: 2, Patient: Critical, Waiting Time: 20.00, Reward: 79.99832848333334, Queue Length: 8
+2024-11-17 15:50:09,105 - INFO - No patients available to serve.

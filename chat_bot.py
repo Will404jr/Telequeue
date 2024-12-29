@@ -1,0 +1,132 @@
+import re
+import pandas as pd
+from sklearn import preprocessing
+from sklearn.tree import DecisionTreeClassifier
+import warnings
+from database import insert_patient, get_next_ticket_number, create_connection, update_patient_status
+from stable_baselines3 import PPO
+from rl_environment import PatientQueueEnv
+from datetime import datetime
+from sklearn.model_selection import train_test_split
+from fuzzywuzzy import process
+import os
+from gtts import gTTS
+
+warnings.filterwarnings("ignore", category=DeprecationWarning)
+
+# Load data
+training = pd.read_csv('Data/Training.csv')
+testing = pd.read_csv('Data/Testing.csv')
+cols = training.columns[:-1]
+x = training[cols]
+y = training['prognosis']
+reduced_data = training.groupby(training['prognosis']).max()
+
+# Preprocessing
+le = preprocessing.LabelEncoder()
+le.fit(y)
+y = le.transform(y)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=42)
+testx = testing[cols]
+testy = le.transform(testing['prognosis'])
+
+# Train model
+clf = DecisionTreeClassifier().fit(x_train, y_train)
+
+# Load RL model
+env = PatientQueueEnv()
+model = PPO.load('ppo_patient_queue')
+
+# List of all possible symptoms
+all_symptoms = cols.tolist()
+
+def match_symptoms(input_symptoms):
+    matched_symptoms = []
+    for symptom in input_symptoms:
+        match = process.extractOne(symptom, all_symptoms)
+        if match[1] > 80:  # Match threshold
+            matched_symptoms.append(match[0])
+    return matched_symptoms
+
+def predict_disease(symptoms):
+    # Create a binary indicator list for symptoms
+    binary_symptoms = [1 if col in symptoms else 0 for col in cols]
+    
+    input_data = pd.DataFrame([binary_symptoms], columns=cols)
+    prediction = clf.predict(input_data)[0]
+    disease = le.inverse_transform([prediction])[0]
+    return disease
+
+def get_criticality(disease):
+    critical_diseases = ['disease1', 'disease2']  # List of critical diseases
+    moderate_diseases = ['disease3', 'disease4']  # List of moderate diseases
+    if disease in critical_diseases:
+        return 'Critical'
+    elif disease in moderate_diseases:
+        return 'Moderate'
+    else:
+        return 'Mild'
+
+def process_patient(name, symptoms):
+    disease = predict_disease(symptoms)
+    criticality = get_criticality(disease)
+    ticket_number = get_next_ticket_number()
+    insert_patient(name, str(symptoms), disease, criticality, 'Not served', ticket_number)
+
+    # Predict waiting time using RL model
+    patient = {
+        'name': name,
+        'symptoms': str(symptoms),
+        'disease': disease,
+        'criticality': criticality,
+        'time_of_arrival': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'status_of_service': 'Not served',
+        'ticket_number': ticket_number
+    }
+    env.add_patient(patient)
+    obs = env.reset()
+    done = False
+    total_reward = 0
+    while not done:
+        action, _states = model.predict(obs, deterministic=True)
+        obs, reward, done, info = env.step(action)
+        total_reward += reward
+
+    predicted_waiting_time = max(0, 100 - total_reward)  # Adjust based on reward function
+    update_waiting_time(ticket_number, predicted_waiting_time)
+
+    return disease, criticality, ticket_number, predicted_waiting_time
+
+def update_waiting_time(ticket_number, waiting_time):
+    conn = create_connection()
+    cursor = conn.cursor()
+    cursor.execute('''
+        UPDATE patients
+        SET predicted_waiting_time = ?
+        WHERE ticket_number = ?
+    ''', (waiting_time, ticket_number))
+    conn.commit()
+    conn.close()
+
+# Play audio for the patient
+def play_audio(ticket_number):
+    text = f"Patient with ticket number {ticket_number}, please proceed to the doctor's office."
+    tts = gTTS(text)
+    tts.save("next_patient.mp3")
+    
+    # Play audio
+    os.startfile("next_patient.mp3")
+
+def call_next_patient():
+    conn = create_connection()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM patients WHERE status_of_service = 'Not served' ORDER BY time_of_arrival ASC LIMIT 1")
+    patient = cursor.fetchone()
+    conn.close()
+
+    if patient:
+        ticket_number = patient[7]
+        play_audio(ticket_number)
+        return patient
+    return None
+

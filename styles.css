@@ -1,0 +1,132 @@
+/* styles.css */
+/* Main background and text colors */
+.stApp {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+/* Headers */
+.main-header {
+  background: linear-gradient(90deg, #2c3e50, #3498db);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  color: white;
+  text-align: center;
+}
+
+/* Landing page cards */
+.landing-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.role-card {
+  background: linear-gradient(145deg, #2c3e50, #34495e);
+  padding: 2rem;
+  border-radius: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.role-card:hover {
+  transform: translateY(-5px);
+  border: 2px solid #3498db;
+}
+
+.role-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Patient cards */
+.patient-card {
+  background-color: #2c3e50;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 5px solid #3498db;
+  margin-bottom: 1rem;
+}
+
+.confirmation-card {
+  background-color: #27ae60;
+  padding: 1.5rem;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Input fields */
+.stTextInput input,
+.stTextArea textarea {
+  background-color: #2c3e50;
+  color: white;
+  border: 1px solid #3498db;
+  border-radius: 5px;
+}
+
+/* Buttons */
+.stButton button {
+  background: linear-gradient(90deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.stButton button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Success messages */
+.success-message {
+  background-color: #27ae60;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+/* Warning messages */
+.warning-message {
+  background-color: #e67e22;
+  color: white;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+/* Metrics */
+.metric-card {
+  background-color: #34495e;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #3498db;
+}
+
+/* Back button */
+.back-button {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #2c3e50;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}

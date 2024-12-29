@@ -1,0 +1,241 @@
+Disease,Criticality
+Heart Attack,Critical
+Stroke,Critical
+Pneumonia,Critical
+Diabetes,Moderate
+Hypertension,Moderate
+Common Cold,Mild
+Flu,Mild
+Headache,Mild
+Asthma,Moderate
+Bronchitis,Moderate
+Tuberculosis,Critical
+COVID-19,Critical
+Migraine,Moderate
+Allergies,Mild
+Gastroenteritis,Moderate
+Anemia,Moderate
+Meningitis,Critical
+Epilepsy,Moderate
+HIV/AIDS,Critical
+Cancer,Critical
+Malaria,Critical
+Zika Virus,Moderate
+Ebola,Critical
+Dengue Fever,Critical
+Chickenpox,Mild
+Measles,Moderate
+Rubella,Mild
+Tetanus,Critical
+Rabies,Critical
+Hepatitis B,Critical
+Hepatitis C,Critical
+Cholera,Critical
+Smallpox,Critical
+Polio,Critical
+Scarlet Fever,Moderate
+Leprosy,Moderate
+Yellow Fever,Critical
+Botulism,Critical
+Anthrax,Critical
+Plague,Critical
+SARS,Critical
+MERS,Critical
+Avian Influenza,Critical
+Swine Flu,Critical
+Norovirus,Moderate
+Listeriosis,Critical
+Pertussis,Critical
+Legionnaires' Disease,Critical
+Bubonic Plague,Critical
+Q Fever,Moderate
+Typhoid Fever,Critical
+West Nile Virus,Moderate
+Rocky Mountain Spotted Fever,Critical
+Lassa Fever,Critical
+Marburg Virus,Critical
+Crimean-Congo Hemorrhagic Fever,Critical
+Hantavirus,Critical
+Brucellosis,Moderate
+Toxoplasmosis,Moderate
+Cystic Fibrosis,Critical
+Lung Cancer,Critical
+Brain Tumor,Critical
+Colon Cancer,Critical
+Pancreatic Cancer,Critical
+Ovarian Cancer,Critical
+Prostate Cancer,Critical
+Leukemia,Critical
+Lymphoma,Critical
+Skin Cancer,Moderate
+Esophageal Cancer,Critical
+Stomach Cancer,Critical
+Multiple Myeloma,Critical
+Myelodysplastic Syndromes,Critical
+Heart Failure,Critical
+Cardiomyopathy,Critical
+Aortic Aneurysm,Critical
+Arrhythmia,Critical
+Pulmonary Embolism,Critical
+Deep Vein Thrombosis,Critical
+Pericarditis,Critical
+Endocarditis,Critical
+Myocarditis,Critical
+Coronary Artery Disease,Critical
+Peripheral Artery Disease,Moderate
+Rheumatic Heart Disease,Moderate
+Valvular Heart Disease,Critical
+Atherosclerosis,Critical
+Hemophilia,Critical
+Sickle Cell Disease,Critical
+Thalassemia,Critical
+Von Willebrand Disease,Moderate
+Factor V Leiden,Moderate
+Beta Thalassemia,Moderate
+Alpha Thalassemia,Moderate
+G6PD Deficiency,Moderate
+Hemochromatosis,Moderate
+Porphyria,Moderate
+Wilson's Disease,Moderate
+Gout,Moderate
+Osteoporosis,Moderate
+Rickets,Moderate
+Scurvy,Moderate
+Beriberi,Moderate
+Pellagra,Moderate
+Kwashiorkor,Moderate
+Marasmus,Moderate
+Anorexia Nervosa,Moderate
+Bulimia Nervosa,Moderate
+Binge Eating Disorder,Moderate
+Obesity,Moderate
+Hypertensive Heart Disease,Critical
+Ischemic Heart Disease,Critical
+Acute Myocardial Infarction,Critical
+Cardiac Arrest,Critical
+Ventricular Fibrillation,Critical
+Sudden Cardiac Death,Critical
+Atrial Fibrillation,Critical
+Supraventricular Tachycardia,Critical
+Bradycardia,Critical
+Heart Block,Critical
+Bundle Branch Block,Critical
+Long QT Syndrome,Critical
+Short QT Syndrome,Critical
+Wolff-Parkinson-White Syndrome,Critical
+Lown-Ganong-Levine Syndrome,Critical
+Arrhythmogenic Right Ventricular Dysplasia,Critical
+Hypertrophic Cardiomyopathy,Critical
+Dilated Cardiomyopathy,Critical
+Restrictive Cardiomyopathy,Critical
+Takotsubo Cardiomyopathy,Critical
+Peripartum Cardiomyopathy,Critical
+Acute Coronary Syndrome,Critical
+Angina Pectoris,Critical
+Stable Angina,Moderate
+Unstable Angina,Critical
+Prinzmetal's Angina,Critical
+Chronic Stable Angina,Moderate
+Silent Ischemia,Moderate
+Non-ST-Elevation Myocardial Infarction,Critical
+ST-Elevation Myocardial Infarction,Critical
+Cor Pulmonale,Critical
+Pulmonary Hypertension,Critical
+Right Ventricular Hypertrophy,Critical
+Left Ventricular Hypertrophy,Critical
+Ventricular Septal Defect,Critical
+Atrial Septal Defect,Critical
+Patent Ductus Arteriosus,Critical
+Tetralogy of Fallot,Critical
+Coarctation of the Aorta,Critical
+Transposition of the Great Arteries,Critical
+Tricuspid Atresia,Critical
+Hypoplastic Left Heart Syndrome,Critical
+Ebstein's Anomaly,Critical
+Pulmonary Atresia,Critical
+Congenital Heart Disease,Critical
+Kawasaki Disease,Critical
+Viral Myocarditis,Critical
+Bacterial Endocarditis,Critical
+Rheumatic Fever,Critical
+Rheumatic Heart Disease,Critical
+Cardiogenic Shock,Critical
+Septic Shock,Critical
+Neurogenic Shock,Critical
+Hypovolemic Shock,Critical
+Anaphylactic Shock,Critical
+Multiple Organ Dysfunction Syndrome,Critical
+Adult Respiratory Distress Syndrome,Critical
+Severe Acute Respiratory Syndrome,Critical
+Middle East Respiratory Syndrome,Critical
+Respiratory Syncytial Virus Infection,Critical
+Pneumocystis Pneumonia,Critical
+Chronic Obstructive Pulmonary Disease,Critical
+Emphysema,Critical
+Chronic Bronchitis,Critical
+Pulmonary Fibrosis,Critical
+Sarcoidosis,Critical
+Interstitial Lung Disease,Critical
+Lung Abscess,Critical
+Bronchiectasis,Critical
+Pulmonary Edema,Critical
+Acute Respiratory Distress Syndrome,Critical
+Respiratory Failure,Critical
+Aspiration Pneumonia,Critical
+Lobar Pneumonia,Critical
+Atypical Pneumonia,Critical
+Legionnaire's Disease,Critical
+Tuberculosis,Critical
+Lung Cancer,Critical
+Pneumothorax,Critical
+Hemothorax,Critical
+Pleural Effusion,Critical
+Pulmonary Hypertension,Critical
+Pulmonary Embolism,Critical
+Fat Embolism Syndrome,Critical
+Miliary Tuberculosis,Critical
+Cystic Fibrosis,Critical
+Asthma,Moderate
+Chronic Bronchitis,Moderate
+Chronic Sinusitis,Moderate
+Allergic Rhinitis,Moderate
+Sleep Apnea,Critical
+Obstructive Sleep Apnea,Critical
+Central Sleep Apnea,Critical
+Mixed Sleep Apnea,Critical
+Upper Respiratory Tract Infection,Mild
+Common Cold,Mild
+Influenza,Mild
+Pharyngitis,Mild
+Laryngitis,Mild
+Tonsillitis,Mild
+Sinusitis,Mild
+Otitis Media,Mild
+Bronchiolitis,Moderate
+Pleurisy,Moderate
+Pneumothorax,Critical
+Hemoptysis,Critical
+Pulmonary Hypertension,Critical
+Acute Respiratory Distress Syndrome,Critical
+Respiratory Failure,Critical
+Asthma,Moderate
+Chronic Bronchitis,Moderate
+Chronic Obstructive Pulmonary Disease,Critical
+Emphysema,Critical
+Pulmonary Fibrosis,Critical
+Sarcoidosis,Critical
+Interstitial Lung Disease,Critical
+Bronchiectasis,Moderate
+Pulmonary Edema,Critical
+Pneumonia,Critical
+Tuberculosis,Critical
+Lung Cancer,Critical
+Mesothelioma,Critical
+Lung Abscess,Critical
+Pleural Effusion,Critical
+Pulmonary Hypertension,Critical
+Pulmonary Embolism,Critical
+Fat Embolism Syndrome,Critical
+Miliary Tuberculosis,Critical
+Cystic Fibrosis,Critical
+Chronic Sinusitis,Moderate

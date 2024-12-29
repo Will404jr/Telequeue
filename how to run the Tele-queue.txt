@@ -1,0 +1,18 @@
+
+how to start the tele_queue system
+
+cd c:\masters2024-pjt\Tele-queue
+
+new_env\Scripts\activate
+
+Train the RL Model:
+Run the train_rl.py script to train the reinforcement learning model:
+
+streamlit run streamlit_chatty.py
+
+
+for new computer you run
+ pip install -r requirements.txt to install the requirements
+
+
+
